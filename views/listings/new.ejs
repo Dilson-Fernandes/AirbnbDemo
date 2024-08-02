@@ -1,0 +1,66 @@
+<% layout('./layouts/boilerplate') -%>
+<body>
+<div class="row">
+<div class="col-8 offset-2">
+    <h2> 
+        create a new listing
+    </h2>
+    <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+        <lable for="title" class="form-label">title</lable>
+        <input type="text" name="listing[title]" class="form-control" required>
+        <div class="valid-feedback">this looks good</div>
+        </div>
+       
+        <div class="mb-3">
+            <lable for="description" class="form-label">description</lable>
+            <textarea name="listing[description]"  placeholder="Enter description" class="form-control" required></textarea>
+            <div class="invalid-feedback">Enter a valid description</div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload image</label>
+            <input type="file" name="listing[image]" placeholder="Upload image" class="form-control" required>
+            <div class="invalid-feedback">Enter a valid image</div>
+        </div>
+        <div class="row">
+            
+        <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" name="listing[price]"  placeholder="Enter price" class="form-control" required>
+            <div class="invalid-feedback">Enter a valid price</div>
+        </div>
+        
+        <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Enter country</label>
+            <input type="text" name="listing[country]" placeholder="enter country name" class="form-control" required >
+            <div class="invalid-feedback">Enter a valid country name</div>
+        </div>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Enter a tag:</label>
+            <select class="form-select" name="listing[category]" required aria-label="Default select example">
+                <option value:"">Open this select menu</option>
+                <option value="Trending"> Trending</option>
+                <option value="Farms"> Farms</option>
+                <option value="Mountain City"> Mountain City</option>
+                <option value="Castle"> Castle</option>
+                <option value="Artic Pool"> Artic Pool</option>
+                <option value="Mountain Valley"> Mountain Valley</option>
+                <option value="Rooms">Rooms</option>
+                <option value="Sea Shore">Sea Shore</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Enter Location</label>
+            <input type="text" name="listing[location]"  placeholder="enter location" class="form-control" required>
+            <div class="invalid-feedback">Enter a valid location</div>
+        </div>
+        
+        
+        
+        <button type="submit" class="btn btn-dark add-btn">Add</button>
+    </form>
+</div>
+</div>
+</body>

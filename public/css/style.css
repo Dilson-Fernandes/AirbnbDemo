@@ -1,0 +1,113 @@
+body{
+    font-family: "Montserrat", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex:1;
+}
+.navbar{
+    heigth:5rem;
+}
+
+.fa-compass{
+    color: rgb(214, 80, 80);
+}
+
+.nav-link{
+    color:#222222 !important;
+}
+
+/* footer */
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+    color: #222222;
+}
+
+
+.f-info-links,.f-info-socials,.f-info-brand{
+    width:100%;
+    display: flex;
+    vertical-align: middle;   
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.f-info-socials i{
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+.f-info{
+    background-color: #d2d0d0;
+    height:  8rem;
+    display: flex;
+    flex-wrap:wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* index  */
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem !important;
+   
+   
+}
+.listing-card img{
+    border-radius: 2rem;
+    width: 100%  !important;
+}
+.card-body{
+    padding: 0% !important;
+}
+.listing-link{
+    text-decoration: none;
+}
+
+/* card effects */
+.card-img-overlay{
+    opacity:0;
+}
+.card-img-overlay:hover{
+    opacity:0.2;
+    background-color: white;
+}
+
+.form-label{
+    font-weight: 500 !important;
+}
+.add-btn{
+    background-color: #f13d3d !important;
+    border: none !important;
+}
+/* edit page */
+.edit-btn{
+    background-color: #f13d3d !important;
+    border: none !important;
+}
+
+/* show page */
+.show-image{
+    height:40vh;
+}
+
+.btns{
+    display: flex;
+    
+}
+
+.show-edit{
+    background-color: #f13d3d !important;
+    border: none !important;
+}
+#map { 
+height: 400px;
+width: 80vh;
+}
