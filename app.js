@@ -71,9 +71,9 @@ async function main(){
     await mongoose.connect(dbURL);
 }
 
-// app.get('/',(req,res)=>{
-//     res.send("This is the first page")
-//})
+app.get('/',(req,res)=>{
+    res.redirect("/listings");
+})
 
 
 app.use(session(sessionOptions));
