@@ -73,7 +73,7 @@ async function main(){
 
 // app.get('/',(req,res)=>{
 //     res.send("This is the first page")
-// })
+//})
 
 
 app.use(session(sessionOptions));
@@ -106,7 +106,7 @@ app.use("/listings",listingRouter);
 
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
-
+ 
 
 // function asyncWrap(fn)
 // {

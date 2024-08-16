@@ -1,4 +1,7 @@
 const Listing = require("../models/listing.js");
+const cloudinary=require("cloudinary");
+const maptilerClient=require("@maptiler/client")
+maptilerClient.config.apiKey=process.env.MAP_TOKEN
 
 module.exports.index = async(req,res)=>{
     const allListings = await Listing.find({});
@@ -34,7 +37,9 @@ module.exports.showListing = async(req,res)=>{
         req.flash("error","The listing you are accessing is not present");
         res.redirect("/listings");
     } 
-    res.render("./listings/show.ejs" , {listing});
+    const result = await maptilerClient.geocoding.forward(listing.location);
+    const geometry=result.features[0].geometry;
+    res.render("./listings/show.ejs" , {listing,geometry});
 };
 
 module.exports.editListing = async(req,res)=>{
@@ -66,6 +71,15 @@ module.exports.updateListing = async(req,res)=>{
 
 module.exports.deleteListing = async(req,res)=>{
     let id=req.params.id;
+    const delLisiting = await Listing.findById(id);
+    const filename = delLisiting.image.filename;
+    cloudinary.uploader.destroy(filename,function(error, result) {
+        if (error) {
+          console.error('Error deleting image:', error);
+        } else {
+          console.log('Image deleted successfully:', result);
+        }
+      });
     await Listing.findByIdAndDelete(id);
     req.flash("success","Deleted sucessfully !");
     res.redirect('/listings')
