@@ -95,7 +95,7 @@ body{
 
 /* show page */
 .show-image{
-    height:40vh;
+    max-height: 20rem;
 }
 
 .btns{
@@ -109,5 +109,6 @@ body{
 }
 #map { 
 height: 400px;
-width: 80vh;
+
+max-width:40rem;;
 }
